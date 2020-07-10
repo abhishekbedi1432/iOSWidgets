@@ -13,6 +13,8 @@
 		3B7B9EC724B874D90089AE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC524B874D90089AE92 /* Main.storyboard */; };
 		3B7B9EC924B874DA0089AE92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC824B874DA0089AE92 /* Assets.xcassets */; };
 		3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B9ECA24B874DA0089AE92 /* LaunchScreen.storyboard */; };
+		3B7B9F0324B87B210089AE92 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0224B87B210089AE92 /* MoreViewController.swift */; };
+		3B7B9F0B24B88A5B0089AE92 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3B7B9EC824B874DA0089AE92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B7B9ECB24B874DA0089AE92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B7B9ECD24B874DA0089AE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B7B9F0224B87B210089AE92 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */,
 				3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */,
 				3B7B9EC324B874D90089AE92 /* ViewController.swift */,
+				3B7B9F0224B87B210089AE92 /* MoreViewController.swift */,
+				3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */,
 				3B7B9EC524B874D90089AE92 /* Main.storyboard */,
 				3B7B9EC824B874DA0089AE92 /* Assets.xcassets */,
 				3B7B9ECA24B874DA0089AE92 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B7B9EC424B874D90089AE92 /* ViewController.swift in Sources */,
+				3B7B9F0324B87B210089AE92 /* MoreViewController.swift in Sources */,
 				3B7B9EC024B874D90089AE92 /* AppDelegate.swift in Sources */,
 				3B7B9EC224B874D90089AE92 /* SceneDelegate.swift in Sources */,
+				3B7B9F0B24B88A5B0089AE92 /* MyOrdersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
