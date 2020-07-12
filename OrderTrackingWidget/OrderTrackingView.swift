@@ -12,11 +12,26 @@ struct OrderTrackingView: View {
     let orderStatus: OrderStatusEntry
     
     var body: some View {
-        Text(orderStatus.status)
-            .font(.largeTitle)
-            .padding()
-            .background(Color.blue)
-//            .clipShape(Circle())
+        
+        if orderStatus.status == "In-Progress" {
+            Text(orderStatus.status)
+                .font(.subheadline)
+                .padding()
+                .background(Color.orange)
+        }
+        else if orderStatus.status == "Delivered" {
+            Text(orderStatus.status)
+                .font(.subheadline)
+                .padding()
+                .background(Color.green)
+
+        }
+        else {
+            Text(orderStatus.status)
+                .font(.subheadline)
+                .padding()
+                .background(Color.red)
+        }
     }
 }
 

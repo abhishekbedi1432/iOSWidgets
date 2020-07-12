@@ -38,8 +38,9 @@ struct Provider: TimelineProvider {
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
         */
-        
-        let entry = OrderStatusEntry(status: status, date: Date())
+
+        let entryDate = Calendar.current.date(byAdding: .second, value: 10, to: Date())!
+        let entry = OrderStatusEntry(status: status, date: entryDate)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
 
@@ -56,8 +57,36 @@ struct PlaceholderView : View {
 struct OrderTrackingWidgetEntryView : View {
     var entry: Provider.Entry
 
+    @Environment(\.widgetFamily) var family
+
+    @ViewBuilder
     var body: some View {
-        OrderTrackingView(orderStatus: entry)
+        switch family {
+        case .systemSmall:
+            OrderTrackingView(orderStatus: entry)
+            
+        case .systemMedium:
+            HStack(spacing: 30) {
+                OrderTrackingView(orderStatus: entry)
+                Text(entry.status)
+                    .font(.title2)
+            }
+            
+        default:
+            VStack(spacing: 30) {
+                HStack(spacing: 30) {
+                    OrderTrackingView(orderStatus: entry)
+                    
+                    Text(entry.status)
+                        .font(.largeTitle)
+                }
+                
+                Text(entry.status)
+                    .font(.title2)
+                    .padding()
+            }
+        }
+        
     }
 }
 
