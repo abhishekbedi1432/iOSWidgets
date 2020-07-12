@@ -33,6 +33,10 @@ class MyOrdersTableViewController: UITableViewController {
 
     @IBAction func trackOrderClicked(_ sender: Any) {
                 
+        let userDefaults = UserDefaults(suiteName: "group.bedi.WidgetDemo")
+        userDefaults?.setValue("In-Progress", forKey: "orderStatus")
+        userDefaults?.synchronize()
+        
         let alert = UIAlertController(title: "Cool! 😎", message: "The Tracking Widget is now added to your Home Screen.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Got It!", style: .default) { _ in
             alert.dismiss(animated: true, completion: nil)

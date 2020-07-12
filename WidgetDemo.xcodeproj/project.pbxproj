@@ -15,7 +15,37 @@
 		3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B9ECA24B874DA0089AE92 /* LaunchScreen.storyboard */; };
 		3B7B9F0324B87B210089AE92 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0224B87B210089AE92 /* MoreViewController.swift */; };
 		3B7B9F0B24B88A5B0089AE92 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */; };
+		3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F424BBB076006C8334 /* WidgetKit.framework */; };
+		3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F624BBB076006C8334 /* SwiftUI.framework */; };
+		3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */; };
+		3BA482FC24BBB078006C8334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA482FB24BBB078006C8334 /* Assets.xcassets */; };
+		3BA4830024BBB078006C8334 /* OrderTrackingWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BA482FE24BBB078006C8334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B7B9EB424B874D80089AE92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA482F124BBB076006C8334;
+			remoteInfo = OrderTrackingWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BA4830424BBB078006C8334 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3BA4830024BBB078006C8334 /* OrderTrackingWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3B7B9EBC24B874D90089AE92 /* WidgetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +58,15 @@
 		3B7B9ECD24B874DA0089AE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B7B9F0224B87B210089AE92 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
+		3BA482ED24BBAFF4006C8334 /* WidgetDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetDemo.entitlements; sourceTree = "<group>"; };
+		3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA482F424BBB076006C8334 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3BA482F624BBB076006C8334 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidget.swift; sourceTree = "<group>"; };
+		3BA482FB24BBB078006C8334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BA482FD24BBB078006C8334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BA4830524BBB08F006C8334 /* OrderTrackingWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderTrackingWidgetExtension.entitlements; sourceTree = "<group>"; };
+		3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,13 +77,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BA482EF24BBB076006C8334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */,
+				3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3B7B9EB324B874D80089AE92 = {
 			isa = PBXGroup;
 			children = (
+				3BA4830524BBB08F006C8334 /* OrderTrackingWidgetExtension.entitlements */,
 				3B7B9EBE24B874D90089AE92 /* WidgetDemo */,
+				3BA482F824BBB076006C8334 /* OrderTrackingWidget */,
+				3BA482F324BBB076006C8334 /* Frameworks */,
 				3B7B9EBD24B874D90089AE92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3B7B9EBC24B874D90089AE92 /* WidgetDemo.app */,
+				3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +112,7 @@
 		3B7B9EBE24B874D90089AE92 /* WidgetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3BA482ED24BBAFF4006C8334 /* WidgetDemo.entitlements */,
 				3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */,
 				3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */,
 				3B7B9EC324B874D90089AE92 /* ViewController.swift */,
@@ -73,6 +126,26 @@
 			path = WidgetDemo;
 			sourceTree = "<group>";
 		};
+		3BA482F324BBB076006C8334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA482F424BBB076006C8334 /* WidgetKit.framework */,
+				3BA482F624BBB076006C8334 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BA482F824BBB076006C8334 /* OrderTrackingWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */,
+				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
+				3BA482FB24BBB078006C8334 /* Assets.xcassets */,
+				3BA482FD24BBB078006C8334 /* Info.plist */,
+			);
+			path = OrderTrackingWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,15 +156,34 @@
 				3B7B9EB824B874D90089AE92 /* Sources */,
 				3B7B9EB924B874D90089AE92 /* Frameworks */,
 				3B7B9EBA24B874D90089AE92 /* Resources */,
+				3BA4830424BBB078006C8334 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3BA482FF24BBB078006C8334 /* PBXTargetDependency */,
 			);
 			name = WidgetDemo;
 			productName = WidgetDemo;
 			productReference = 3B7B9EBC24B874D90089AE92 /* WidgetDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3BA482F124BBB076006C8334 /* OrderTrackingWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA4830124BBB078006C8334 /* Build configuration list for PBXNativeTarget "OrderTrackingWidgetExtension" */;
+			buildPhases = (
+				3BA482EE24BBB076006C8334 /* Sources */,
+				3BA482EF24BBB076006C8334 /* Frameworks */,
+				3BA482F024BBB076006C8334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderTrackingWidgetExtension;
+			productName = OrderTrackingWidgetExtension;
+			productReference = 3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,6 +195,9 @@
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					3B7B9EBB24B874D90089AE92 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					3BA482F124BBB076006C8334 = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
@@ -121,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				3B7B9EBB24B874D90089AE92 /* WidgetDemo */,
+				3BA482F124BBB076006C8334 /* OrderTrackingWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +229,14 @@
 				3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */,
 				3B7B9EC924B874DA0089AE92 /* Assets.xcassets in Resources */,
 				3B7B9EC724B874D90089AE92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA482F024BBB076006C8334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA482FC24BBB078006C8334 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +255,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BA482EE24BBB076006C8334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */,
+				3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BA482FF24BBB078006C8334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BA482F124BBB076006C8334 /* OrderTrackingWidgetExtension */;
+			targetProxy = 3BA482FE24BBB078006C8334 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3B7B9EC524B874D90089AE92 /* Main.storyboard */ = {
@@ -292,8 +413,10 @@
 		3B7B9ED124B874DA0089AE92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetDemo/WidgetDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K383G7UJW4;
 				INFOPLIST_FILE = WidgetDemo/Info.plist;
@@ -311,8 +434,10 @@
 		3B7B9ED224B874DA0089AE92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetDemo/WidgetDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K383G7UJW4;
 				INFOPLIST_FILE = WidgetDemo/Info.plist;
@@ -322,6 +447,50 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bedi.WidgetDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3BA4830224BBB078006C8334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OrderTrackingWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K383G7UJW4;
+				INFOPLIST_FILE = OrderTrackingWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bedi.WidgetDemo.OrderTrackingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BA4830324BBB078006C8334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OrderTrackingWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K383G7UJW4;
+				INFOPLIST_FILE = OrderTrackingWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bedi.WidgetDemo.OrderTrackingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,6 +513,15 @@
 			buildConfigurations = (
 				3B7B9ED124B874DA0089AE92 /* Debug */,
 				3B7B9ED224B874DA0089AE92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BA4830124BBB078006C8334 /* Build configuration list for PBXNativeTarget "OrderTrackingWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA4830224BBB078006C8334 /* Debug */,
+				3BA4830324BBB078006C8334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
