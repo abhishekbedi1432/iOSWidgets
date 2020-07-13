@@ -145,10 +145,10 @@
 		3BA482F824BBB076006C8334 /* OrderTrackingWidget */ = {
 			isa = PBXGroup;
 			children = (
-				3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */,
-				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
 				3BA482FB24BBB078006C8334 /* Assets.xcassets */,
 				3BA482FD24BBB078006C8334 /* Info.plist */,
+				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
+				3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */,
 			);
 			path = OrderTrackingWidget;
 			sourceTree = "<group>";

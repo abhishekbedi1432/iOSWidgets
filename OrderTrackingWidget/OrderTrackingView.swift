@@ -36,12 +36,13 @@ struct CircleView: View {
     let text: String
     let imageName: String
     let backgroundColor: Color
+    var shouldScale = true
         
     var body: some View {
         VStack(alignment: .center) {
             
             Image(imageName)
-                .scaleEffect(x: 1.5, y: 1.5, anchor: .center)
+                .scaleEffect(x: shouldScale ? 1.5 : 1.0, y: shouldScale ? 1.5 : 1.0, anchor: .center)
             Text("")
             Text(text)
                 .fontWeight(.medium)
@@ -57,19 +58,26 @@ struct CircleView: View {
 
 struct OrderTrackingSmallView: View {
     let orderStatus: OrderStatusEntry
-        
+     
+    var model:OrderTrackingWidgetModel {
+        return orderStatus.model
+    }
+    
     var body: some View {
-        CircleView(text: orderStatus.model.status, imageName: orderStatus.model.imageName, backgroundColor: Color(hex: orderStatus.model.color))
+        CircleView(text: model.status, imageName: model.imageName, backgroundColor: Color(hex: model.color))
     }
 }
 
 struct OrderTrackingMediumView: View {
     let orderStatus: OrderStatusEntry
     
+    var model:OrderTrackingWidgetModel {
+        return orderStatus.model
+    }
     var body: some View {
         HStack(spacing: 10) {
-            CircleView(text: orderStatus.model.status, imageName: orderStatus.model.imageName, backgroundColor: Color(hex: orderStatus.model.color))
-            OrderView(date: orderStatus.model.date, number: orderStatus.model.number, total: orderStatus.model.total)
+            CircleView(text: model.status, imageName: model.imageName, backgroundColor: Color(hex: model.color))
+            OrderView(date: model.date, number: model.number, total: model.total)
         }
         .padding(.all, 10)
     }
@@ -93,10 +101,3 @@ struct OrderTrackingView: View {
         }
     }
 }
-//
-//struct OrderTrackingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let order = OrderStatusEntry.init(status: "#Status", date: Date())
-//        return OrderTrackingView.init(orderStatus: order, family: .systemSmall)
-//    }
-//}

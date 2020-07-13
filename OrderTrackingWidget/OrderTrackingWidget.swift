@@ -19,11 +19,9 @@ struct Provider: TimelineProvider {
     var orderData: Data = Data()
 
     public func snapshot(with context: Context, completion: @escaping (OrderStatusEntry) -> ()) {
-//        let entry = OrderStatusEntry(status: status, date: Date())
-//        completion(entry)
         
         guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
-        let entry = OrderStatusEntry.init(model: model)
+        let entry = OrderStatusEntry(model: model)
         completion(entry)
         
     }
@@ -49,18 +47,13 @@ struct Provider: TimelineProvider {
         let entry = OrderStatusEntry(model: model)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
-        
-//        let entry = OrderStatusEntry(status: status, date: entryDate)
-//        let timeline = Timeline(entries: [entry], policy: .atEnd)
-//        completion(timeline)
-
     }
 }
 
 
 struct PlaceholderView : View {
     var body: some View {
-        Text("#MAF Order Tracking Widget")
+        CircleView(text: "Tracker1", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false)
     }
 }
 
@@ -82,8 +75,8 @@ struct OrderTrackingWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider(), placeholder: PlaceholderView()) { entry in
             OrderTrackingWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("MAF Order Tracking Widget")
+        .description("Use this widget to keep a track of your orders & get real time updates!")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
