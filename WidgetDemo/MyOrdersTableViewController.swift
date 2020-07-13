@@ -37,16 +37,21 @@ class MyOrdersTableViewController: UITableViewController {
         guard let button = sender as? UIButton else {
             return
         }
-        var status = "#No Status"
+        
+        var widgetModel: OrderTrackingWidgetModel = OrderTrackingWidgetModel(number: "000", date: "NA", total: "AED 400", status: "NA", color: "FFFF00", imageName: "")
         switch button.tag {
-        case 0: status = "In-Progress"
-        case 1: status = "Delivered"
-        case 2: status = "Cancelled"
+        case 0:
+            widgetModel = OrderTrackingWidgetModel(number: "123", date: "Tomorrow", total: "AED 400", status: "In-Progress", color: "FF4500", imageName: "shipment_dispatched_active")
+        case 1:
+            widgetModel = OrderTrackingWidgetModel(number: "456", date: "Yesterday", total: "AED 400", status: "Delivered", color: "228B22", imageName: "shipment_delivered_success")
+        case 2:
+            widgetModel = OrderTrackingWidgetModel(number: "789", date: "Yesterday", total: "AED 400", status: "Cancelled", color: "DC143C", imageName: "shipment_cancelled")
         default: break
         }
         
         let userDefaults = UserDefaults(suiteName: "group.bedi.WidgetDemo")
-        userDefaults?.setValue(status, forKey: "orderStatus")
+        guard let widgetData = try? JSONEncoder().encode(widgetModel) else { return }
+        userDefaults?.setValue(widgetData, forKey: "orderStatus")
         userDefaults?.synchronize()
         
 //        WidgetCenter.shared.reloadTimelines(ofKind: "group.bedi.WidgetDemo")

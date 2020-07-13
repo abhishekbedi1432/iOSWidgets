@@ -9,18 +9,23 @@ import WidgetKit
 import SwiftUI
 
 struct OrderStatusEntry: TimelineEntry, Codable {
-    var status = String()
     var date = Date()
+    var model: OrderTrackingWidgetModel
 }
 
 struct Provider: TimelineProvider {
     
     @AppStorage("orderStatus", store: UserDefaults(suiteName: "group.bedi.WidgetDemo"))
-    var status: String = String()
+    var orderData: Data = Data()
 
     public func snapshot(with context: Context, completion: @escaping (OrderStatusEntry) -> ()) {
-        let entry = OrderStatusEntry(status: status, date: Date())
+//        let entry = OrderStatusEntry(status: status, date: Date())
+//        completion(entry)
+        
+        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
+        let entry = OrderStatusEntry.init(model: model)
         completion(entry)
+        
     }
 
     public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
@@ -39,10 +44,15 @@ struct Provider: TimelineProvider {
         completion(timeline)
         */
 
-        let entryDate = Calendar.current.date(byAdding: .second, value: 10, to: Date())!
-        let entry = OrderStatusEntry(status: status, date: entryDate)
+        
+        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
+        let entry = OrderStatusEntry(model: model)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
+        
+//        let entry = OrderStatusEntry(status: status, date: entryDate)
+//        let timeline = Timeline(entries: [entry], policy: .atEnd)
+//        completion(timeline)
 
     }
 }
@@ -59,34 +69,8 @@ struct OrderTrackingWidgetEntryView : View {
 
     @Environment(\.widgetFamily) var family
 
-    @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            OrderTrackingView(orderStatus: entry)
-            
-        case .systemMedium:
-            HStack(spacing: 30) {
-                OrderTrackingView(orderStatus: entry)
-                Text(entry.status)
-                    .font(.title2)
-            }
-            
-        default:
-            VStack(spacing: 30) {
-                HStack(spacing: 30) {
-                    OrderTrackingView(orderStatus: entry)
-                    
-                    Text(entry.status)
-                        .font(.largeTitle)
-                }
-                
-                Text(entry.status)
-                    .font(.title2)
-                    .padding()
-            }
-        }
-        
+        OrderTrackingView(orderStatus: entry, family: family)
     }
 }
 
@@ -101,12 +85,5 @@ struct OrderTrackingWidget: Widget {
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
         .supportedFamilies([.systemSmall, .systemMedium])
-    }
-}
-
-struct OrderTrackingWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        OrderTrackingWidgetEntryView(entry: OrderStatusEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

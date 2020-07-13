@@ -21,6 +21,9 @@
 		3BA482FC24BBB078006C8334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA482FB24BBB078006C8334 /* Assets.xcassets */; };
 		3BA4830024BBB078006C8334 /* OrderTrackingWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */; };
+		3BA4830924BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */; };
+		3BA4830A24BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */; };
+		3BA4831024BBF0B3006C8334 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,8 @@
 		3BA482FD24BBB078006C8334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BA4830524BBB08F006C8334 /* OrderTrackingWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderTrackingWidgetExtension.entitlements; sourceTree = "<group>"; };
 		3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingView.swift; sourceTree = "<group>"; };
+		3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetModel.swift; sourceTree = "<group>"; };
+		3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,8 @@
 		3B7B9EB324B874D80089AE92 = {
 			isa = PBXGroup;
 			children = (
+				3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */,
+				3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */,
 				3BA4830524BBB08F006C8334 /* OrderTrackingWidgetExtension.entitlements */,
 				3B7B9EBE24B874D90089AE92 /* WidgetDemo */,
 				3BA482F824BBB076006C8334 /* OrderTrackingWidget */,
@@ -250,6 +257,7 @@
 				3B7B9EC424B874D90089AE92 /* ViewController.swift in Sources */,
 				3B7B9F0324B87B210089AE92 /* MoreViewController.swift in Sources */,
 				3B7B9EC024B874D90089AE92 /* AppDelegate.swift in Sources */,
+				3BA4830924BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */,
 				3B7B9EC224B874D90089AE92 /* SceneDelegate.swift in Sources */,
 				3B7B9F0B24B88A5B0089AE92 /* MyOrdersTableViewController.swift in Sources */,
 			);
@@ -259,8 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA4830A24BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */,
 				3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */,
 				3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */,
+				3BA4831024BBF0B3006C8334 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
