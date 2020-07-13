@@ -6,31 +6,43 @@
 //
 
 import SwiftUI
+import WidgetKit
+
+
+struct OrderTrackingSmallView: View {
+    let orderStatus: OrderStatusEntry
+    
+    var body: some View {
+        Text(orderStatus.status)
+    }
+}
+
+struct OrderTrackingMediumView: View {
+    let orderStatus: OrderStatusEntry
+    
+    var body: some View {
+        HStack(spacing: 30) {
+            Text(orderStatus.status)
+            Text(orderStatus.status)
+        }
+    }
+}
 
 struct OrderTrackingView: View {
     
     let orderStatus: OrderStatusEntry
+    let family: WidgetFamily
     
     var body: some View {
         
-        if orderStatus.status == "In-Progress" {
-            Text(orderStatus.status)
-                .font(.subheadline)
-                .padding()
-                .background(Color.orange)
-        }
-        else if orderStatus.status == "Delivered" {
-            Text(orderStatus.status)
-                .font(.subheadline)
-                .padding()
-                .background(Color.green)
-
-        }
-        else {
-            Text(orderStatus.status)
-                .font(.subheadline)
-                .padding()
-                .background(Color.red)
+        switch family {
+        case .systemSmall:
+            OrderTrackingSmallView(orderStatus: orderStatus)
+            
+        case .systemMedium:
+            OrderTrackingMediumView(orderStatus: orderStatus)
+            
+        default: OrderTrackingSmallView(orderStatus: orderStatus)
         }
     }
 }
@@ -38,6 +50,6 @@ struct OrderTrackingView: View {
 struct OrderTrackingView_Previews: PreviewProvider {
     static var previews: some View {
         let order = OrderStatusEntry.init(status: "#Status", date: Date())
-        return OrderTrackingView.init(orderStatus: order)
+        return OrderTrackingView.init(orderStatus: order, family: .systemSmall)
     }
 }
