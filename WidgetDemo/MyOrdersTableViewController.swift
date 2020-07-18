@@ -32,20 +32,17 @@ class MyOrdersTableViewController: UITableViewController {
         trackOrderWidgetButton.blink()
     }
 
-    @IBAction func trackOrderClicked(_ sender: Any) {
-                
-        guard let button = sender as? UIButton else {
-            return
-        }
-        
-        var widgetModel: OrderTrackingWidgetModel = OrderTrackingWidgetModel(number: "000", date: "NA", total: "AED 400", status: "NA", color: "FFFF00", imageName: "")
-        switch button.tag {
+    
+    class func updateWidget(_ tag: Int) {
+
+        var widgetModel: OrderTrackingWidgetModel = OrderTrackingWidgetModel(number: "000", date: "NA", total: "400", status: "NA", color: "FFFF00", imageName: "")
+        switch tag {
         case 0:
-            widgetModel = OrderTrackingWidgetModel(number: "123", date: "Tomorrow", total: "AED 400", status: "In-Progress", color: "FF4500", imageName: "shipment_dispatched_active")
+            widgetModel = OrderTrackingWidgetModel(number: "123", date: "Tomorrow", total: "400", status: "In-Progress", color: "FF4500", imageName: "shipment_dispatched_active")
         case 1:
-            widgetModel = OrderTrackingWidgetModel(number: "456", date: "Yesterday", total: "AED 400", status: "Delivered", color: "228B22", imageName: "shipment_delivered_success")
+            widgetModel = OrderTrackingWidgetModel(number: "456", date: "Yesterday", total: "400", status: "Delivered", color: "228B22", imageName: "shipment_delivered_success")
         case 2:
-            widgetModel = OrderTrackingWidgetModel(number: "789", date: "Yesterday", total: "AED 400", status: "Cancelled", color: "DC143C", imageName: "shipment_cancelled")
+            widgetModel = OrderTrackingWidgetModel(number: "789", date: "Yesterday", total: "400", status: "Cancelled", color: "DC143C", imageName: "shipment_cancelled")
         default: break
         }
         
@@ -56,11 +53,24 @@ class MyOrdersTableViewController: UITableViewController {
         
 //        WidgetCenter.shared.reloadTimelines(ofKind: "group.bedi.WidgetDemo")
         WidgetCenter.shared.reloadAllTimelines()
+
+    }
+    
+    @IBAction func trackOrderClicked(_ sender: Any) {
+        
+        guard let button = sender as? UIButton else {
+            return
+        }
+        
+        MyOrdersTableViewController.updateWidget(button.tag)
+        
+        showAlert()
+    }
+    
+    private func showAlert() {
+        
         let alert = UIAlertController(title: "Cool! 😎", message: "The Tracking Widget is now added to your Home Screen.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Got It!", style: .default) { _ in
-            
-            
-
             alert.dismiss(animated: true, completion: nil)
         }
         alert.addAction(okAction)

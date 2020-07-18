@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B12E15024BC91FF001163B6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E14F24BC91FF001163B6 /* CircleView.swift */; };
+		3B12E15224BC9224001163B6 /* OrderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15124BC9224001163B6 /* OrderInfoView.swift */; };
+		3B12E15424BC9252001163B6 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15324BC9252001163B6 /* TitleSubtitleView.swift */; };
+		3B12E15624BC9EE7001163B6 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15524BC9EE7001163B6 /* LogoView.swift */; };
 		3B7B9EC024B874D90089AE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */; };
 		3B7B9EC224B874D90089AE92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */; };
 		3B7B9EC424B874D90089AE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC324B874D90089AE92 /* ViewController.swift */; };
@@ -15,6 +19,13 @@
 		3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B9ECA24B874DA0089AE92 /* LaunchScreen.storyboard */; };
 		3B7B9F0324B87B210089AE92 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0224B87B210089AE92 /* MoreViewController.swift */; };
 		3B7B9F0B24B88A5B0089AE92 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */; };
+		3B7BDAA024BEE10300032F1D /* ImageAndTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7BDA9F24BEE10300032F1D /* ImageAndTextView.swift */; };
+		3B7BDAA224BEFA6600032F1D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA124BEFA6600032F1D /* Colors.swift */; };
+		3B7BDAAA24C39C6700032F1D /* push-notif-silent-alert-cancelled.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA524C39C6700032F1D /* push-notif-silent-alert-cancelled.apns */; };
+		3B7BDAAB24C39C6700032F1D /* push-notif-silent-alert-delivered.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA624C39C6700032F1D /* push-notif-silent-alert-delivered.apns */; };
+		3B7BDAAC24C39C6700032F1D /* push-notif-silent-alert.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */; };
+		3B7BDAAD24C39C6700032F1D /* push-notif-silent.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */; };
+		3B7BDAAE24C39C6700032F1D /* push-notif-silent-alert-inprogress.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */; };
 		3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F424BBB076006C8334 /* WidgetKit.framework */; };
 		3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F624BBB076006C8334 /* SwiftUI.framework */; };
 		3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */; };
@@ -51,6 +62,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B12E14F24BC91FF001163B6 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		3B12E15124BC9224001163B6 /* OrderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoView.swift; sourceTree = "<group>"; };
+		3B12E15324BC9252001163B6 /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
+		3B12E15524BC9EE7001163B6 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		3B7B9EBC24B874D90089AE92 /* WidgetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +76,13 @@
 		3B7B9ECD24B874DA0089AE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B7B9F0224B87B210089AE92 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		3B7B9F0A24B88A5B0089AE92 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
+		3B7BDA9F24BEE10300032F1D /* ImageAndTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTextView.swift; sourceTree = "<group>"; };
+		3B7BDAA124BEFA6600032F1D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3B7BDAA524C39C6700032F1D /* push-notif-silent-alert-cancelled.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert-cancelled.apns"; sourceTree = "<group>"; };
+		3B7BDAA624C39C6700032F1D /* push-notif-silent-alert-delivered.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert-delivered.apns"; sourceTree = "<group>"; };
+		3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert.apns"; sourceTree = "<group>"; };
+		3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent.apns"; sourceTree = "<group>"; };
+		3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert-inprogress.apns"; sourceTree = "<group>"; };
 		3BA482ED24BBAFF4006C8334 /* WidgetDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetDemo.entitlements; sourceTree = "<group>"; };
 		3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA482F424BBB076006C8334 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -94,9 +116,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B12E14E24BC8EC8001163B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B12E14F24BC91FF001163B6 /* CircleView.swift */,
+				3B12E15124BC9224001163B6 /* OrderInfoView.swift */,
+				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
+				3B12E15324BC9252001163B6 /* TitleSubtitleView.swift */,
+				3B12E15524BC9EE7001163B6 /* LogoView.swift */,
+				3B7BDA9F24BEE10300032F1D /* ImageAndTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3B7B9EB324B874D80089AE92 = {
 			isa = PBXGroup;
 			children = (
+				3B7BDAA424C39C6700032F1D /* PushNotifications */,
 				3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */,
 				3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */,
 				3BA4830524BBB08F006C8334 /* OrderTrackingWidgetExtension.entitlements */,
@@ -133,6 +169,18 @@
 			path = WidgetDemo;
 			sourceTree = "<group>";
 		};
+		3B7BDAA424C39C6700032F1D /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				3B7BDAA524C39C6700032F1D /* push-notif-silent-alert-cancelled.apns */,
+				3B7BDAA624C39C6700032F1D /* push-notif-silent-alert-delivered.apns */,
+				3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */,
+				3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */,
+				3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */,
+			);
+			path = PushNotifications;
+			sourceTree = "<group>";
+		};
 		3BA482F324BBB076006C8334 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +195,9 @@
 			children = (
 				3BA482FB24BBB078006C8334 /* Assets.xcassets */,
 				3BA482FD24BBB078006C8334 /* Info.plist */,
-				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
+				3B12E14E24BC8EC8001163B6 /* Views */,
 				3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */,
+				3B7BDAA124BEFA6600032F1D /* Colors.swift */,
 			);
 			path = OrderTrackingWidget;
 			sourceTree = "<group>";
@@ -233,9 +282,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7BDAAA24C39C6700032F1D /* push-notif-silent-alert-cancelled.apns in Resources */,
+				3B7BDAAD24C39C6700032F1D /* push-notif-silent.apns in Resources */,
 				3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */,
 				3B7B9EC924B874DA0089AE92 /* Assets.xcassets in Resources */,
 				3B7B9EC724B874D90089AE92 /* Main.storyboard in Resources */,
+				3B7BDAAC24C39C6700032F1D /* push-notif-silent-alert.apns in Resources */,
+				3B7BDAAE24C39C6700032F1D /* push-notif-silent-alert-inprogress.apns in Resources */,
+				3B7BDAAB24C39C6700032F1D /* push-notif-silent-alert-delivered.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +321,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7BDAA024BEE10300032F1D /* ImageAndTextView.swift in Sources */,
+				3B7BDAA224BEFA6600032F1D /* Colors.swift in Sources */,
+				3B12E15624BC9EE7001163B6 /* LogoView.swift in Sources */,
+				3B12E15424BC9252001163B6 /* TitleSubtitleView.swift in Sources */,
+				3B12E15224BC9224001163B6 /* OrderInfoView.swift in Sources */,
 				3BA4830A24BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */,
 				3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */,
 				3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */,
+				3B12E15024BC91FF001163B6 /* CircleView.swift in Sources */,
 				3BA4831024BBF0B3006C8334 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

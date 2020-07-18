@@ -23,7 +23,6 @@ struct Provider: TimelineProvider {
         guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
         let entry = OrderStatusEntry(model: model)
         completion(entry)
-        
     }
 
     public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
@@ -53,17 +52,17 @@ struct Provider: TimelineProvider {
 
 struct PlaceholderView : View {
     var body: some View {
-        CircleView(text: "Tracker1", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false)
+        CircleView(text: "Tracker", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false)
     }
 }
 
 struct OrderTrackingWidgetEntryView : View {
     var entry: Provider.Entry
 
-    @Environment(\.widgetFamily) var family
+//    @Environment(\.widgetFamily) var family
 
-    var body: some View {
-        OrderTrackingView(orderStatus: entry, family: family)
+    var body: some View {        
+        OrderTrackingView(orderStatus: entry)
     }
 }
 
