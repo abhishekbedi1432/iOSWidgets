@@ -1,0 +1,11 @@
+{
+    "Simulator Target Bundle": "com.bedi.WidgetDemo",
+    "aps" : {
+        "alert": "Your Order is In Progress!",
+        "sound": "default",
+        "badge": 0,
+    },
+     "data" :{
+        "orderStatus" : "0",
+     }
+}

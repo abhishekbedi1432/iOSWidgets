@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         UNUserNotificationCenter.current().delegate = self
         getPushNotifications()
-        
+        application.applicationIconBadgeNumber = 0
         return true
     }
 
@@ -60,14 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         print("Background Fetch ... ")
         
-        MyOrdersTableViewController.updateWidget(1)
+//        MyOrdersTableViewController.updateWidget(1)
         completionHandler(.newData)
     }
     
     //MARK: -  Remote Notifications
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
-//        MyOrdersTableViewController.updateWidget()
+        updateWidget(userInfo)
         completionHandler(.newData)
 
     }
@@ -94,13 +94,28 @@ extension AppDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Test Foreground: \(notification.request.identifier)")
+        
+        updateWidget(notification.request.content.userInfo)
+        
         completionHandler([.banner, .list, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print(response)
+        updateWidget(response.notification.request.content.userInfo)
         
         completionHandler()
     }
 
+}
+
+
+extension AppDelegate {
+    func updateWidget(_ userInfo: [AnyHashable:Any]?) {
+        if let data = userInfo?["data"] as? [AnyHashable:Any] {
+            if let tag = Int((data["orderStatus"] as? String) ?? "") {
+                MyOrdersTableViewController.updateWidget(tag)
+            }
+        }
+    }
 }

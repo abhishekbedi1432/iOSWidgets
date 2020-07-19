@@ -35,6 +35,9 @@
 		3BA4830924BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */; };
 		3BA4830A24BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */; };
 		3BA4831024BBF0B3006C8334 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */; };
+		3BEFE57224C43CF000CFF2F1 /* push-notif-inprogress.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3BEFE56F24C43CF000CFF2F1 /* push-notif-inprogress.apns */; };
+		3BEFE57324C43CF000CFF2F1 /* push-notif-cancelled.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3BEFE57024C43CF000CFF2F1 /* push-notif-cancelled.apns */; };
+		3BEFE57424C43CF000CFF2F1 /* push-notif-delivered.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3BEFE57124C43CF000CFF2F1 /* push-notif-delivered.apns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingView.swift; sourceTree = "<group>"; };
 		3BA4830824BBEAB8006C8334 /* OrderTrackingWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetModel.swift; sourceTree = "<group>"; };
 		3BA4830E24BBF0B3006C8334 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3BEFE56F24C43CF000CFF2F1 /* push-notif-inprogress.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-inprogress.apns"; sourceTree = "<group>"; };
+		3BEFE57024C43CF000CFF2F1 /* push-notif-cancelled.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-cancelled.apns"; sourceTree = "<group>"; };
+		3BEFE57124C43CF000CFF2F1 /* push-notif-delivered.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-delivered.apns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +178,14 @@
 		3B7BDAA424C39C6700032F1D /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				3B7BDAA524C39C6700032F1D /* push-notif-silent-alert-cancelled.apns */,
+				3BEFE56F24C43CF000CFF2F1 /* push-notif-inprogress.apns */,
+				3BEFE57024C43CF000CFF2F1 /* push-notif-cancelled.apns */,
+				3BEFE57124C43CF000CFF2F1 /* push-notif-delivered.apns */,
+				3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */,
 				3B7BDAA624C39C6700032F1D /* push-notif-silent-alert-delivered.apns */,
+				3B7BDAA524C39C6700032F1D /* push-notif-silent-alert-cancelled.apns */,
 				3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */,
 				3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */,
-				3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */,
 			);
 			path = PushNotifications;
 			sourceTree = "<group>";
@@ -282,12 +291,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BEFE57324C43CF000CFF2F1 /* push-notif-cancelled.apns in Resources */,
 				3B7BDAAA24C39C6700032F1D /* push-notif-silent-alert-cancelled.apns in Resources */,
 				3B7BDAAD24C39C6700032F1D /* push-notif-silent.apns in Resources */,
+				3BEFE57424C43CF000CFF2F1 /* push-notif-delivered.apns in Resources */,
 				3B7B9ECC24B874DA0089AE92 /* LaunchScreen.storyboard in Resources */,
 				3B7B9EC924B874DA0089AE92 /* Assets.xcassets in Resources */,
 				3B7B9EC724B874D90089AE92 /* Main.storyboard in Resources */,
 				3B7BDAAC24C39C6700032F1D /* push-notif-silent-alert.apns in Resources */,
+				3BEFE57224C43CF000CFF2F1 /* push-notif-inprogress.apns in Resources */,
 				3B7BDAAE24C39C6700032F1D /* push-notif-silent-alert-inprogress.apns in Resources */,
 				3B7BDAAB24C39C6700032F1D /* push-notif-silent-alert-delivered.apns in Resources */,
 			);

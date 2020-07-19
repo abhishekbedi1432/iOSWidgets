@@ -1,0 +1,14 @@
+{
+    "Simulator Target Bundle": "com.bedi.WidgetDemo",
+    "aps" : {
+        "content-available" : 1,
+        "alert": "This is a test notification!",
+        "badge": 5,
+        "sound": "default"
+    },
+     "data" :{
+        "title" : "Game Request",
+        "body" : "Bob wants to play poker",
+        "action-loc-key" : "PLAY"
+     }
+}

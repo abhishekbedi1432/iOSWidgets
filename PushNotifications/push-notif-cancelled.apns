@@ -1,0 +1,11 @@
+{
+    "Simulator Target Bundle": "com.bedi.WidgetDemo",
+    "aps" : {
+        "alert": "Your Order is Cancelled!",
+        "sound": "default",
+        "badge": 2
+    },
+     "data" :{
+        "orderStatus" : "2",
+     }
+}

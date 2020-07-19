@@ -52,14 +52,12 @@ struct Provider: TimelineProvider {
 
 struct PlaceholderView : View {
     var body: some View {
-        CircleView(text: "Tracker", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false)
+        CircleView(text: "   Order Tracker   ", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false, cornerRadius: 0.0)
     }
 }
 
 struct OrderTrackingWidgetEntryView : View {
     var entry: Provider.Entry
-
-//    @Environment(\.widgetFamily) var family
 
     var body: some View {        
         OrderTrackingView(orderStatus: entry)
@@ -76,6 +74,6 @@ struct OrderTrackingWidget: Widget {
         }
         .configurationDisplayName("MAF Order Tracking Widget")
         .description("Use this widget to keep a track of your orders & get real time updates!")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall])
     }
 }

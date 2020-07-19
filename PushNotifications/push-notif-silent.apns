@@ -1,0 +1,10 @@
+{
+    "Simulator Target Bundle": "com.bedi.WidgetDemo",
+    "aps" : {
+        "content-available" : 1,
+    },
+     "data" :{
+        "title" : "Title",
+        "body" : "Body",
+     }
+}

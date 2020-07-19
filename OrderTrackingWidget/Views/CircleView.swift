@@ -10,7 +10,9 @@ struct CircleView: View {
     let text: String
     let imageName: String
     let backgroundColor: Color
+    
     var shouldScale = true
+    var cornerRadius = CGFloat(10.0)
         
     var body: some View {
         VStack(alignment: .center) {
@@ -24,7 +26,7 @@ struct CircleView: View {
         }
         .padding(.all, 20)
         .background(backgroundColor.opacity(0.2))
-        .cornerRadius(10.0)
+        .cornerRadius(cornerRadius)
         .clipShape(Circle())
     }
 }
