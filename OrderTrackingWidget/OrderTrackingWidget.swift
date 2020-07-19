@@ -74,6 +74,6 @@ struct OrderTrackingWidget: Widget {
         }
         .configurationDisplayName("MAF Order Tracking Widget")
         .description("Use this widget to keep a track of your orders & get real time updates!")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

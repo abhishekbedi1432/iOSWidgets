@@ -58,11 +58,11 @@ private struct MediumView: View {
     var body: some View {
             VStack(alignment: .leading) {
                 LogoView()
-                OrderInfoView(date: model.date, number: model.number, total: model.total)
+                OrderInfoView(date: model.date, number: model.number, total: model.total)                    
                 ImageAndTextView(labelDirection: .down,
                                  text: model.status,
                                  textColor: model.color,
                                  imageName: model.imageName)
-            }.background(Color.red)
+            }
     }
 }

@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         print("Background Fetch ... ")
         
-//        MyOrdersTableViewController.updateWidget(1)
+        MyOrdersTableViewController.updateWidget(2)
         completionHandler(.newData)
     }
     

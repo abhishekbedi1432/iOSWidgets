@@ -30,7 +30,7 @@ struct OrderInfoView: View {
 }
 
 //MARK: - Small View -
-fileprivate struct SmallView: View {
+private struct SmallView: View {
     let date: String
     let number: String
     let total: String
@@ -49,16 +49,18 @@ fileprivate struct SmallView: View {
 }
 
 //MARK: - Medium View -
-fileprivate struct MediumView: View {
+private struct MediumView: View {
     let date: String
     let number: String
     let total: String
     
     var body: some View {
-        HStack {
+        HStack(alignment: .firstTextBaseline, spacing: 50) {
             TitleSubtitleView(title: "Order Number", subTitle: number)
             TitleSubtitleView(title: "Order Date", subTitle: date)
             TitleSubtitleView(title: "Total AED", subTitle: total)
         }
+        .frame(width: 280)
+        .offset(x: -5)
     }
 }
