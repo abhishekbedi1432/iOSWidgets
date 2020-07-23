@@ -8,6 +8,9 @@
 import UIKit
 import UserNotifications
 
+
+fileprivate let orderStatusKey = "OrderStatusKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
@@ -16,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         getPushNotifications()
         application.applicationIconBadgeNumber = 0
+        UserDefaults.standard.setValue(0, forKey: orderStatusKey)
         return true
     }
 
@@ -58,9 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
-        print("Background Fetch ... ")
-        
-        MyOrdersTableViewController.updateWidget(2)
+        if var tag = UserDefaults.standard.value(forKey: orderStatusKey) as? Int {
+            print("Background Fetch ... tag \(tag)")
+            MyOrdersTableViewController.updateWidget(tag)
+            tag = tag + 1
+            tag = tag > 2 ? 0 : tag
+            UserDefaults.standard.setValue(tag, forKey: orderStatusKey)
+            UserDefaults.standard.synchronize()
+        }
         completionHandler(.newData)
     }
     
