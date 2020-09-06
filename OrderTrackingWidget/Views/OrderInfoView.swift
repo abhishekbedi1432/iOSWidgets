@@ -37,14 +37,22 @@ private struct SmallView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TitleSubtitleView(title: "Order Number", subTitle: number)
+//            TitleSubtitleView(title: "Order Number", subTitle: number)
+            TitleView(title: "15", subTitle: "items (Groceries)")
             Text("")
             HStack(alignment: .top) {
-                TitleSubtitleView(title: "Order Date", subTitle: date)
-                Spacer()
-                TitleSubtitleView(title: "Total AED", subTitle: total)
+                List(0 ..< self.imageNames.count) { item in
+                    let imageName = self.imageNames[item]
+                    Image(imageName).resizable().frame(width: 32, height: 32)
+                }
             }
         }
+    }
+
+    private var imageNames: [String] {
+//        ["c4_logo_small", "c4_logo_small", "c4_logo_small", "c4_logo_small"]
+        return ["c4_logo_small"]
+
     }
 }
 

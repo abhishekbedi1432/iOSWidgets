@@ -45,7 +45,6 @@ private struct SmallView: View {
                              imageName: model.imageName)
         }
         .padding()
-        .background(ContainerRelativeShape().fill(gradientColor))
     }
     
     private var gradientColor: LinearGradient {

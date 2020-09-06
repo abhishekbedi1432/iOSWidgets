@@ -38,13 +38,6 @@ struct Provider: TimelineProvider {
     }
 }
 
-
-struct PlaceholderView : View {
-    var body: some View {
-        CircleView(text: "   Order Tracker   ", imageName: "Logo", backgroundColor: Color.blue.opacity(0.5), shouldScale: false, cornerRadius: 0.0)
-    }
-}
-
 struct OrderTrackingWidgetEntryView : View {
     var entry: Provider.Entry
 
@@ -60,69 +53,15 @@ struct OrderTrackingWidget: Widget {
     public var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             OrderTrackingWidgetEntryView(entry: entry)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(ContainerRelativeShape().fill(gradientColor))
         }
         .configurationDisplayName("MAF Order Tracking Widget")
         .description("Use this widget to keep a track of your orders & get real time updates!")
         .supportedFamilies([.systemSmall])
     }
-}
-
-
-
-
-
-/*    func placeholder(in context: Context) -> OrderStatusEntry {
-        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return OrderStatusEntry }
-        return OrderStatusEntry(model: model)
-//        let entry = OrderStatusEntry(model: model)
-//        let timeline = Timeline(entries: [entry], policy: .atEnd)
-//        OrderStatusEntry.
-//        completion(timeline)
-//        return timeline
-    }
-     */
-
-
-
-/*    public func snapshot(with context: Context, completion: @escaping (OrderStatusEntry) -> ()) {
-        
-        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
-        let entry = OrderStatusEntry(model: model)
-        completion(entry)
-    }
-*/
     
-/*
-    public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        
-//        var entries: [OrderStatusEntry] = []
-//
-//         Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = OrderStatusEntry(date: entryDate)
-//            entries.append(entry)
-//        }
-//
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
-        
-
-        
-        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
-        let entry = OrderStatusEntry(model: model)
-        let timeline = Timeline(entries: [entry], policy: .atEnd)
-        completion(timeline)
+    private var gradientColor: LinearGradient {
+        return LinearGradient(gradient: Gradient(colors: [Colors.mafBlueStartColor, Colors.mafBlueEndColor]), startPoint: .top, endPoint: .bottom)
     }
-*/
-
-/*   func placeholder(in context: Context) -> some TimelineEntry {
-       guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
-       let entry = OrderStatusEntry(model: model)
-       let timeline = Timeline(entries: [entry], policy: .atEnd)
-//        completion(timeline)
-       return timeline
-
-   }
-*/
+}
