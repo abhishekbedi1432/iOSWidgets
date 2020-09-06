@@ -51,7 +51,7 @@ class MyOrdersTableViewController: UITableViewController {
         userDefaults?.setValue(widgetData, forKey: "orderStatus")
         userDefaults?.synchronize()
         
-//        WidgetCenter.shared.reloadTimelines(ofKind: "group.bedi.WidgetDemo")
+        WidgetCenter.shared.reloadTimelines(ofKind: "OrderTrackingWidget")
         WidgetCenter.shared.reloadAllTimelines()
 
     }

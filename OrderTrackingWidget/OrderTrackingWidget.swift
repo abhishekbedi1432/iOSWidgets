@@ -14,34 +14,23 @@ struct OrderStatusEntry: TimelineEntry, Codable {
 }
 
 struct Provider: TimelineProvider {
+    typealias Entry = OrderStatusEntry
     
     @AppStorage("orderStatus", store: UserDefaults(suiteName: "group.bedi.WidgetDemo"))
     var orderData: Data = Data()
+    
+    func placeholder(in context: Context) -> OrderStatusEntry {
+        let model = try! JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData)
+        return OrderStatusEntry(model: model)
+    }
 
-    public func snapshot(with context: Context, completion: @escaping (OrderStatusEntry) -> ()) {
-        
+    func getSnapshot(in context: Context, completion: @escaping (OrderStatusEntry) -> Void) {
         guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
         let entry = OrderStatusEntry(model: model)
         completion(entry)
     }
-
-    public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        /*
-        var entries: [OrderStatusEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = OrderStatusEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-        */
-
-        
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<OrderStatusEntry>) -> Void) {
         guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
         let entry = OrderStatusEntry(model: model)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
@@ -69,7 +58,7 @@ struct OrderTrackingWidget: Widget {
     private let kind: String = "OrderTrackingWidget"
 
     public var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider(), placeholder: PlaceholderView()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             OrderTrackingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MAF Order Tracking Widget")
@@ -77,3 +66,63 @@ struct OrderTrackingWidget: Widget {
         .supportedFamilies([.systemSmall])
     }
 }
+
+
+
+
+
+/*    func placeholder(in context: Context) -> OrderStatusEntry {
+        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return OrderStatusEntry }
+        return OrderStatusEntry(model: model)
+//        let entry = OrderStatusEntry(model: model)
+//        let timeline = Timeline(entries: [entry], policy: .atEnd)
+//        OrderStatusEntry.
+//        completion(timeline)
+//        return timeline
+    }
+     */
+
+
+
+/*    public func snapshot(with context: Context, completion: @escaping (OrderStatusEntry) -> ()) {
+        
+        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
+        let entry = OrderStatusEntry(model: model)
+        completion(entry)
+    }
+*/
+    
+/*
+    public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        
+//        var entries: [OrderStatusEntry] = []
+//
+//         Generate a timeline consisting of five entries an hour apart, starting from the current date.
+//        let currentDate = Date()
+//        for hourOffset in 0 ..< 5 {
+//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+//            let entry = OrderStatusEntry(date: entryDate)
+//            entries.append(entry)
+//        }
+//
+//        let timeline = Timeline(entries: entries, policy: .atEnd)
+//        completion(timeline)
+        
+
+        
+        guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
+        let entry = OrderStatusEntry(model: model)
+        let timeline = Timeline(entries: [entry], policy: .atEnd)
+        completion(timeline)
+    }
+*/
+
+/*   func placeholder(in context: Context) -> some TimelineEntry {
+       guard let model = try? JSONDecoder().decode(OrderTrackingWidgetModel.self, from: orderData) else { return }
+       let entry = OrderStatusEntry(model: model)
+       let timeline = Timeline(entries: [entry], policy: .atEnd)
+//        completion(timeline)
+       return timeline
+
+   }
+*/

@@ -14,5 +14,7 @@ struct OrderTrackingWidgetModel: Identifiable, Codable {
     let status: String
     let color: String
     let imageName: String
+    
+    
     var id: String { number }
 }
