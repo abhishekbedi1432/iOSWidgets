@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		3B12E15424BC9252001163B6 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15324BC9252001163B6 /* TitleSubtitleView.swift */; };
 		3B12E15624BC9EE7001163B6 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15524BC9EE7001163B6 /* LogoView.swift */; };
 		3B6483A925056EFB00E2E1B9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6483A825056EFB00E2E1B9 /* TitleView.swift */; };
+		3B6483AC25057EFB00E2E1B9 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3B6483AB25057EFB00E2E1B9 /* URLImage */; };
 		3B7B9EC024B874D90089AE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */; };
 		3B7B9EC224B874D90089AE92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */; };
 		3B7B9EC424B874D90089AE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC324B874D90089AE92 /* ViewController.swift */; };
@@ -117,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */,
+				3B6483AC25057EFB00E2E1B9 /* URLImage in Frameworks */,
 				3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +251,9 @@
 			dependencies = (
 			);
 			name = OrderTrackingWidgetExtension;
+			packageProductDependencies = (
+				3B6483AB25057EFB00E2E1B9 /* URLImage */,
+			);
 			productName = OrderTrackingWidgetExtension;
 			productReference = 3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -279,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 3B7B9EB324B874D80089AE92;
+			packageReferences = (
+				3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 3B7B9EBD24B874D90089AE92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -613,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B6483AB25057EFB00E2E1B9 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B7B9EB424B874D80089AE92 /* Project object */;
 }

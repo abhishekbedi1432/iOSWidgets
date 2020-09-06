@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import URLImage
 
 struct OrderInfoView: View {
     let date: String
@@ -41,10 +42,19 @@ private struct SmallView: View {
             TitleView(title: "15", subTitle: "items (Groceries)")
             Text("")
             HStack(alignment: .top) {
-                List(0 ..< self.imageNames.count) { item in
-                    let imageName = self.imageNames[item]
-                    Image(imageName).resizable().frame(width: 32, height: 32)
-                }
+                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
+                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
+                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
+                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+//                Image("c4_logo_small").resizable().frame(width: 32, height: 32)
+//                Image("c4_logo_small").resizable().frame(width: 32, height: 32)
+                
+//                List(0 ..< self.imageNames.count) { item in
+//                    let imageName = self.imageNames[item]
+//                    Image(imageName).resizable().frame(width: 32, height: 32)
+//                }
             }
         }
     }
