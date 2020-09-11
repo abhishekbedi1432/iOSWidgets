@@ -12,6 +12,7 @@ struct OrderInfoView: View {
     let date: String
     let number: String
     let total: String
+    let isSingleProduct: Bool
     
     @Environment(\.widgetFamily) var family
     
@@ -19,12 +20,12 @@ struct OrderInfoView: View {
         
         switch family {
         case .systemSmall:
-            SmallView(date: date, number: number, total: total)
+            SmallView(date: date, number: number, total: total, isSingleProduct: isSingleProduct)
             
         case .systemMedium:
             MediumView(date: date, number: number, total: total)
             
-        default: SmallView(date: date, number: number, total: total)
+        default: SmallView(date: date, number: number, total: total, isSingleProduct: isSingleProduct)
         }
     }
 }
@@ -34,10 +35,38 @@ private struct SmallView: View {
     let date: String
     let number: String
     let total: String
+    let isSingleProduct: Bool
     
     @Environment(\.imageCache) var cache: ImageCache
-    
+   
+    @ViewBuilder
     var body: some View {
+        
+        if isSingleProduct {
+            singleProductView
+        } else {
+            multiProductView
+        }
+    }
+    
+    
+    fileprivate var singleProductView: some View {
+        HStack(alignment: .center) {
+            Text("#Panasonic Microwave").font(.system(size: 10)).lineLimit(3)
+            AsyncImage(
+               url: URL(string: "https://via.placeholder.com/150/92c952")!,
+               cache: self.cache,
+                placeholder: Text("Loading ...").font(.system(size: 10)),
+               configuration: { $0.resizable() }
+            )
+            .frame(minWidth: 48, maxWidth: 48, minHeight: 48, maxHeight: 48)
+        }
+        .foregroundColor(.white)
+    }
+    
+    
+    
+    fileprivate var multiProductView: some View {
         VStack(alignment: .leading) {
             TitleView(title: "15", subTitle: "items (Groceries)")
             
@@ -48,7 +77,7 @@ private struct SmallView: View {
                    placeholder: Text("Loading ..."),
                    configuration: { $0.resizable() }
                 )
-                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+                .frame(minWidth: 25, maxWidth: 25, minHeight: 25, maxHeight: 25)
 
                 AsyncImage(
                    url: URL(string: "https://via.placeholder.com/150/92c952")!,
@@ -56,7 +85,7 @@ private struct SmallView: View {
                    placeholder: Text("Loading ..."),
                    configuration: { $0.resizable() }
                 )
-                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+                .frame(minWidth: 25, maxWidth: 25, minHeight: 25, maxHeight: 25)
 
                 AsyncImage(
                    url: URL(string: "https://via.placeholder.com/150/92c952")!,
@@ -64,7 +93,7 @@ private struct SmallView: View {
                    placeholder: Text("Loading ..."),
                    configuration: { $0.resizable() }
                 )
-                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+                .frame(minWidth: 25, maxWidth: 25, minHeight: 25, maxHeight: 25)
             }
         }
     }

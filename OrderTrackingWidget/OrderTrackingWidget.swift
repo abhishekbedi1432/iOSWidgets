@@ -54,7 +54,7 @@ struct OrderTrackingWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             OrderTrackingWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(ContainerRelativeShape().fill(gradientColor))
+                .background(ContainerRelativeShape().fill(Colors.mafBlueStartColor))
         }
         .configurationDisplayName("MAF Order Tracking Widget")
         .description("Use this widget to keep a track of your orders & get real time updates!")
