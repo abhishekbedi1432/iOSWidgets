@@ -36,15 +36,11 @@ private struct SmallView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            LogoView()
+            LogoView(title: "#Shipment 1")
             OrderInfoView(date: model.date, number: model.number, total: model.total)
-            Spacer()
-            ImageAndTextView(labelDirection: .right,
-                             text: model.status,
-                             textColor: model.color,
-                             imageName: model.imageName)
+            DeliveryStatusView(imageName: model.imageName, deliveryStatus: "#Delivered", deliveryTime: "#15 Aug (12pm - 2pm)")
         }
-        .padding()
+        .padding(EdgeInsets(top: 12, leading: 10, bottom: 12, trailing: 12))
     }
     
     private var gradientColor: LinearGradient {
@@ -61,7 +57,7 @@ private struct MediumView: View {
     }
     var body: some View {
             VStack(alignment: .leading) {
-                LogoView()
+                LogoView(title: "#Medium Title")
                 OrderInfoView(date: model.date, number: model.number, total: model.total)                    
                 ImageAndTextView(labelDirection: .down,
                                  text: model.status,

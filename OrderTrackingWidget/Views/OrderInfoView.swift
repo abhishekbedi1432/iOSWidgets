@@ -7,7 +7,6 @@
 
 import SwiftUI
 import WidgetKit
-import URLImage
 
 struct OrderInfoView: View {
     let date: String
@@ -36,33 +35,38 @@ private struct SmallView: View {
     let number: String
     let total: String
     
+    @Environment(\.imageCache) var cache: ImageCache
+    
     var body: some View {
         VStack(alignment: .leading) {
-//            TitleSubtitleView(title: "Order Number", subTitle: number)
             TitleView(title: "15", subTitle: "items (Groceries)")
-            Text("")
-            HStack(alignment: .top) {
-                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
-                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
-                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
-                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
-                URLImage(URL(string: "https://via.placeholder.com/150/92c952")!)
-                    .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
-//                Image("c4_logo_small").resizable().frame(width: 32, height: 32)
-//                Image("c4_logo_small").resizable().frame(width: 32, height: 32)
-                
-//                List(0 ..< self.imageNames.count) { item in
-//                    let imageName = self.imageNames[item]
-//                    Image(imageName).resizable().frame(width: 32, height: 32)
-//                }
+            
+            HStack {
+                AsyncImage(
+                   url: URL(string: "https://via.placeholder.com/150/92c952")!,
+                   cache: self.cache,
+                   placeholder: Text("Loading ..."),
+                   configuration: { $0.resizable() }
+                )
+                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+
+                AsyncImage(
+                   url: URL(string: "https://via.placeholder.com/150/92c952")!,
+                   cache: self.cache,
+                   placeholder: Text("Loading ..."),
+                   configuration: { $0.resizable() }
+                )
+                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
+
+                AsyncImage(
+                   url: URL(string: "https://via.placeholder.com/150/92c952")!,
+                   cache: self.cache,
+                   placeholder: Text("Loading ..."),
+                   configuration: { $0.resizable() }
+                )
+                .frame(minWidth: 32, maxWidth: 32, minHeight: 32, maxHeight: 32)
             }
         }
-    }
-
-    private var imageNames: [String] {
-//        ["c4_logo_small", "c4_logo_small", "c4_logo_small", "c4_logo_small"]
-        return ["c4_logo_small"]
-
     }
 }
 

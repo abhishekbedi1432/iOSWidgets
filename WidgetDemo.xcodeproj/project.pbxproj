@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		3B12E15424BC9252001163B6 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15324BC9252001163B6 /* TitleSubtitleView.swift */; };
 		3B12E15624BC9EE7001163B6 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12E15524BC9EE7001163B6 /* LogoView.swift */; };
 		3B6483A925056EFB00E2E1B9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6483A825056EFB00E2E1B9 /* TitleView.swift */; };
-		3B6483AC25057EFB00E2E1B9 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3B6483AB25057EFB00E2E1B9 /* URLImage */; };
 		3B7B9EC024B874D90089AE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EBF24B874D90089AE92 /* AppDelegate.swift */; };
 		3B7B9EC224B874D90089AE92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC124B874D90089AE92 /* SceneDelegate.swift */; };
 		3B7B9EC424B874D90089AE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B9EC324B874D90089AE92 /* ViewController.swift */; };
@@ -28,6 +27,12 @@
 		3B7BDAAC24C39C6700032F1D /* push-notif-silent-alert.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */; };
 		3B7BDAAD24C39C6700032F1D /* push-notif-silent.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */; };
 		3B7BDAAE24C39C6700032F1D /* push-notif-silent-alert-inprogress.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */; };
+		3B92AAB4250B936F004589A7 /* DeliveryStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AAB3250B936F004589A7 /* DeliveryStatusView.swift */; };
+		3B92AAC8250B9C4A004589A7 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AAB9250B9C4A004589A7 /* ImageCache.swift */; };
+		3B92AAC9250B9C4A004589A7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AABA250B9C4A004589A7 /* ImageLoader.swift */; };
+		3B92AACD250B9C4A004589A7 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AAC0250B9C4A004589A7 /* EnvironmentValues+ImageCache.swift */; };
+		3B92AACE250B9C4A004589A7 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AAC1250B9C4A004589A7 /* AsyncImage.swift */; };
+		3B92AAD2250B9C4A004589A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92AAC7250B9C4A004589A7 /* ContentView.swift */; };
 		3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F424BBB076006C8334 /* WidgetKit.framework */; };
 		3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA482F624BBB076006C8334 /* SwiftUI.framework */; };
 		3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */; };
@@ -89,6 +94,12 @@
 		3B7BDAA724C39C6700032F1D /* push-notif-silent-alert.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert.apns"; sourceTree = "<group>"; };
 		3B7BDAA824C39C6700032F1D /* push-notif-silent.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent.apns"; sourceTree = "<group>"; };
 		3B7BDAA924C39C6700032F1D /* push-notif-silent-alert-inprogress.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "push-notif-silent-alert-inprogress.apns"; sourceTree = "<group>"; };
+		3B92AAB3250B936F004589A7 /* DeliveryStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatusView.swift; sourceTree = "<group>"; };
+		3B92AAB9250B9C4A004589A7 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		3B92AABA250B9C4A004589A7 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		3B92AAC0250B9C4A004589A7 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
+		3B92AAC1250B9C4A004589A7 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		3B92AAC7250B9C4A004589A7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3BA482ED24BBAFF4006C8334 /* WidgetDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetDemo.entitlements; sourceTree = "<group>"; };
 		3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA482F424BBB076006C8334 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -118,7 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA482F724BBB076006C8334 /* SwiftUI.framework in Frameworks */,
-				3B6483AC25057EFB00E2E1B9 /* URLImage in Frameworks */,
 				3BA482F524BBB076006C8334 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +141,7 @@
 			children = (
 				3B12E14F24BC91FF001163B6 /* CircleView.swift */,
 				3B7BDA9F24BEE10300032F1D /* ImageAndTextView.swift */,
+				3B92AAB3250B936F004589A7 /* DeliveryStatusView.swift */,
 				3B12E15524BC9EE7001163B6 /* LogoView.swift */,
 				3B12E15124BC9224001163B6 /* OrderInfoView.swift */,
 				3BA4830624BBB72E006C8334 /* OrderTrackingView.swift */,
@@ -195,6 +206,18 @@
 			path = PushNotifications;
 			sourceTree = "<group>";
 		};
+		3B92AAB8250B9C4A004589A7 /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				3B92AAB9250B9C4A004589A7 /* ImageCache.swift */,
+				3B92AABA250B9C4A004589A7 /* ImageLoader.swift */,
+				3B92AAC0250B9C4A004589A7 /* EnvironmentValues+ImageCache.swift */,
+				3B92AAC1250B9C4A004589A7 /* AsyncImage.swift */,
+				3B92AAC7250B9C4A004589A7 /* ContentView.swift */,
+			);
+			path = AsyncImage;
+			sourceTree = "<group>";
+		};
 		3BA482F324BBB076006C8334 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +232,7 @@
 			children = (
 				3BA482FB24BBB078006C8334 /* Assets.xcassets */,
 				3BA482FD24BBB078006C8334 /* Info.plist */,
+				3B92AAB8250B9C4A004589A7 /* AsyncImage */,
 				3B12E14E24BC8EC8001163B6 /* Views */,
 				3BA482F924BBB076006C8334 /* OrderTrackingWidget.swift */,
 				3B7BDAA124BEFA6600032F1D /* Colors.swift */,
@@ -234,6 +258,8 @@
 				3BA482FF24BBB078006C8334 /* PBXTargetDependency */,
 			);
 			name = WidgetDemo;
+			packageProductDependencies = (
+			);
 			productName = WidgetDemo;
 			productReference = 3B7B9EBC24B874D90089AE92 /* WidgetDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -252,7 +278,6 @@
 			);
 			name = OrderTrackingWidgetExtension;
 			packageProductDependencies = (
-				3B6483AB25057EFB00E2E1B9 /* URLImage */,
 			);
 			productName = OrderTrackingWidgetExtension;
 			productReference = 3BA482F224BBB076006C8334 /* OrderTrackingWidgetExtension.appex */;
@@ -285,7 +310,6 @@
 			);
 			mainGroup = 3B7B9EB324B874D80089AE92;
 			packageReferences = (
-				3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 3B7B9EBD24B874D90089AE92 /* Products */;
 			projectDirPath = "";
@@ -344,12 +368,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B92AAC9250B9C4A004589A7 /* ImageLoader.swift in Sources */,
 				3B7BDAA024BEE10300032F1D /* ImageAndTextView.swift in Sources */,
+				3B92AAC8250B9C4A004589A7 /* ImageCache.swift in Sources */,
 				3B7BDAA224BEFA6600032F1D /* Colors.swift in Sources */,
 				3B12E15624BC9EE7001163B6 /* LogoView.swift in Sources */,
 				3B12E15424BC9252001163B6 /* TitleSubtitleView.swift in Sources */,
+				3B92AAD2250B9C4A004589A7 /* ContentView.swift in Sources */,
 				3B12E15224BC9224001163B6 /* OrderInfoView.swift in Sources */,
 				3BA4830A24BBEAB8006C8334 /* OrderTrackingWidgetModel.swift in Sources */,
+				3B92AACE250B9C4A004589A7 /* AsyncImage.swift in Sources */,
+				3B92AAB4250B936F004589A7 /* DeliveryStatusView.swift in Sources */,
+				3B92AACD250B9C4A004589A7 /* EnvironmentValues+ImageCache.swift in Sources */,
 				3BA4830724BBB72E006C8334 /* OrderTrackingView.swift in Sources */,
 				3BA482FA24BBB076006C8334 /* OrderTrackingWidget.swift in Sources */,
 				3B6483A925056EFB00E2E1B9 /* TitleView.swift in Sources */,
@@ -621,25 +651,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.19;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3B6483AB25057EFB00E2E1B9 /* URLImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3B6483AA25057EFB00E2E1B9 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B7B9EB424B874D80089AE92 /* Project object */;
 }
