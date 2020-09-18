@@ -23,7 +23,13 @@ class MoreViewController: UIViewController {
 
     @IBAction func buttonAction(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let moreVC = sb.instantiateViewController(identifier: "MyOrdersTableViewController")
+        var moreVC: UIViewController!
+        if #available(iOS 13.0, *) {
+            moreVC = sb.instantiateViewController(identifier: "More")
+        } else {
+            // Fallback on earlier versions
+            moreVC = sb.instantiateViewController(withIdentifier: "More")
+        }
         navigationController?.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(moreVC, animated: true)
 

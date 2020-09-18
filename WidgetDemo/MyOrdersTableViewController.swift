@@ -33,6 +33,7 @@ class MyOrdersTableViewController: UITableViewController {
     }
 
     
+    @available(iOS 14.0, *)
     class func updateWidget(_ tag: Int) {
 
         var widgetModel: OrderTrackingWidgetModel = OrderTrackingWidgetModel(number: "000", date: "NA", total: "400", status: "NA", color: "FFFF00", imageName: "")
@@ -62,8 +63,9 @@ class MyOrdersTableViewController: UITableViewController {
             return
         }
         
-        MyOrdersTableViewController.updateWidget(button.tag)
-        
+        if #available(iOS 14.0, *) {
+            MyOrdersTableViewController.updateWidget(button.tag)
+        }         
         showAlert()
     }
     

@@ -23,15 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-    }
-    
-    
     func getPushNotifications() {
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             switch settings.authorizationStatus {
@@ -64,11 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         if var tag = UserDefaults.standard.value(forKey: orderStatusKey) as? Int {
             print("Background Fetch ... tag \(tag)")
-            MyOrdersTableViewController.updateWidget(tag)
-            tag = tag + 1
-            tag = tag > 2 ? 0 : tag
-            UserDefaults.standard.setValue(tag, forKey: orderStatusKey)
-            UserDefaults.standard.synchronize()
+            if #available(iOS 14.0, *) {
+                MyOrdersTableViewController.updateWidget(tag)
+                tag = tag + 1
+                tag = tag > 2 ? 0 : tag
+                UserDefaults.standard.setValue(tag, forKey: orderStatusKey)
+                UserDefaults.standard.synchronize()
+
+            } else {
+                // Fallback on earlier versions
+            }
         }
         completionHandler(.newData)
     }
@@ -76,7 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //MARK: -  Remote Notifications
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
-        updateWidget(userInfo)
+        if #available(iOS 14.0, *) {
+            updateWidget(userInfo)
+        }
         completionHandler(.newData)
 
     }
@@ -104,15 +102,22 @@ extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Test Foreground: \(notification.request.identifier)")
         
-        updateWidget(notification.request.content.userInfo)
-        
-        completionHandler([.banner, .list, .sound])
+        if #available(iOS 14.0, *) {
+            updateWidget(notification.request.content.userInfo)
+        }         
+        if #available(iOS 14.0, *) {
+            completionHandler([.banner, .list, .sound])
+        } else {
+            // Fallback on earlier versions
+            completionHandler([.sound])
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print(response)
-        updateWidget(response.notification.request.content.userInfo)
-        
+        if #available(iOS 14.0, *) {
+            updateWidget(response.notification.request.content.userInfo)
+        }         
         completionHandler()
     }
 
@@ -120,6 +125,7 @@ extension AppDelegate {
 
 
 extension AppDelegate {
+    @available(iOS 14.0, *)
     func updateWidget(_ userInfo: [AnyHashable:Any]?) {
         if let data = userInfo?["data"] as? [AnyHashable:Any] {
             if let tag = Int((data["orderStatus"] as? String) ?? "") {
